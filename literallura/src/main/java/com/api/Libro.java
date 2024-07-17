@@ -1,18 +1,17 @@
-package com.foro.entity;
-import java.sql.Date;
+package com.api;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "topicos")
+@Table(name = "libros")
 @Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor
 public class Libro  {
     
 	
 	@Id
     @Column(name="ID_LIBRO")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name="TITULO")
@@ -25,10 +24,10 @@ public class Libro  {
     private String idioma;
     
     @Column(name="FECHA_NACIMIENTO") 
-    private Date fechaNacimiento;
+    private int fechaNacimiento;
     
     @Column(name="FECHA_FALLECIMIENTO")
-    private String fechaFallecimiento;
+    private int fechaFallecimiento;
     
 
 }
